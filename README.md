@@ -10,7 +10,31 @@
 - NodeJS & NPM for front-end assets
 
 ## Installation
-1) Clone Repository using 
+1) Clone Repository using below url
+    https://github.com/lakminiuthpala/book-store-app.git
+
+2) Navigate to the project directory
+   cd book-store-app
+   
+3) Install dependancies
+   composer install
+
+4) Rename .env.example to .env
+
+5) Update `.env` file with your database credentials
+   
+6) create database called book_store
+
+7) Install JavaScript dependencies
+    npm install and npm run dev
+   
+8) run migrations
+    php artisan migrate
+   
+9) run seeders
+    php artisan db:seed
+
+10) 
 
 
 
