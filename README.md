@@ -1,3 +1,77 @@
+# book-store-app
+
+
+## Requirements
+
+- PHP >= 8.1
+- Composer
+- Laravel >= 10.x
+- MySQL >= 5.7
+- NodeJS & NPM for front-end assets
+
+## Installation
+1) Clone Repository using below url
+   ```bash
+    https://github.com/lakminiuthpala/book-store-app.git
+   ```
+
+3) Navigate to the project directory
+  ```bash
+     cd book-store-app
+```
+   
+4) Install dependancies
+```bash
+   composer install
+```
+
+5) Rename .env.example to .env
+
+6) Update `.env` file with your database credentials
+   
+7) create database called "book_store"
+
+8) Install JavaScript dependencies
+```bash
+    npm install and npm run dev
+```
+9) run migrations
+    ```bash
+    php artisan migrate
+''''
+   
+10) run seeders
+```bash
+    php artisan db:seed
+```
+
+11) Start to server
+```bash
+    php artisan serve
+```
+
+12) to backup system run below command
+    ```bash
+    backup :database
+    ```
+
+## packages to use develop the system
+
+1) used laravel breeze to develop Authentication and authorizations
+
+2) used saptie for user role permissions
+
+3) used spatie\db-dumper for create a backup command
+   
+
+
+
+
+
+
+
+
+
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
@@ -66,5 +140,5 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 =======
-# book-store-app
+
 
