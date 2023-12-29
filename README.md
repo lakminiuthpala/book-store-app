@@ -11,33 +11,44 @@
 
 ## Installation
 1) Clone Repository using below url
-   ''''''
+   ```bash
     https://github.com/lakminiuthpala/book-store-app.git
-   .....
+   '''
 
 3) Navigate to the project directory
-   cd book-store-app
+  ```bash
+     cd book-store-app
+'''
    
 4) Install dependancies
+```bash
    composer install
+'''
 
 5) Rename .env.example to .env
 
 6) Update `.env` file with your database credentials
    
-7) create database called book_store
+7) create database called "book_store"
 
 8) Install JavaScript dependencies
+```bash
     npm install and npm run dev
-   
+   '''
 9) run migrations
+    ```bash
     php artisan migrate
+''''
    
 10) run seeders
+```bash
     php artisan db:seed
+''''
 
 11) Start to server
+```bash
     php artisan serve
+'''
 
 
 
