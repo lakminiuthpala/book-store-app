@@ -50,7 +50,7 @@
     php artisan serve
 ```
 
-12) to backup system
+12) to backup system run below command
     ```bash
     backup :database
     ```
