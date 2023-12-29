@@ -34,7 +34,8 @@
 9) run seeders
     php artisan db:seed
 
-10) 
+10) Start to server
+    php artisan serve
 
 
 
