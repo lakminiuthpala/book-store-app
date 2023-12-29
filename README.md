@@ -50,6 +50,11 @@
     php artisan serve
 ```
 
+12) to backup system
+    ```bash
+    backup :database
+    ```
+
 
 
 
