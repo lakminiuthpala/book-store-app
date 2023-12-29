@@ -30,27 +30,30 @@ class RegisteredReaderController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        
+
+        $reader = Reader::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'user_type' => 'reader',
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
         $user = User::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
             'user_type' => 'reader',
             'password' => Hash::make($request->password),
-        ]);
-
-        $employee = Reader::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'user_type' => 'reader',
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'code' => $reader->id,
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
         
-        return redirect()->route('borrowed-history')
+        return redirect()->route('/borrowed-history')
             ->with('success', 'Log in successfully');
     }
 }

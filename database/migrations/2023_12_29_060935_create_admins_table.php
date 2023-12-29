@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->enum('user_type',['admin', 'editor', 'viewer']);
+            $table->enum('is_returned',['No', 'Yes']);
             $table->string('password');
             $table->boolean('is_super')->default(false);
             $table->rememberToken();

@@ -102,7 +102,7 @@ class BookController extends Controller
     public function issue($id)
     {
         $book = Book::find($id);
-        $readers = Reader::get(); 
+        $readers = Reader::get()->where('status','active'); 
         return view('books.borrow_book', compact(['book','readers']));
 
     }
@@ -112,6 +112,7 @@ class BookController extends Controller
             'book_id' => 'required ',
             'user_id' => 'required',
             'issued_at' => now(),
+            // 'issued_by' =>session->get(),
             
         ]);
 
@@ -133,7 +134,7 @@ class BookController extends Controller
     }
 
     public function history(){
-
+        dd(Session()->all());
     }
 
     

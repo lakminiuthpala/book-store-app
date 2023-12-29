@@ -47,9 +47,9 @@
          <td>
                 <form action="{{ route('book.destroy',$book->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('book.show',$book->id) }}">Show</a>
-                    @can('edit-books')
+                    
                     <a class="btn btn-primary" href="{{ route('book.issue',$book->id) }}">Issue</a>
-                    @endcan
+                    
                     @can('edit-books')
                     <a class="btn btn-primary" href="{{ route('book.edit',$book->id) }}">Edit</a>
                     @endcan

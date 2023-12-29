@@ -27,13 +27,13 @@ Route::get('/', function () {
 //     return view('layouts/master');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard', function () {
-    return view('layouts/master');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('layouts/master');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/borrowed-history', function () {
-    return view('readers/borrowed-history');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/borrowed-history', function () {
+//     return view('readers/borrowed-history');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/staff/dashboard', [AdminController::class, 'index'])->name('staff.dashboard');
 
@@ -62,7 +62,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/employees/{id}/destroy', [EmployeeController::class, 'destroy'])->name('employee.destroy');
 
 
-    Route::get('/books/{id}/barrow-history', [BookController::class, 'history'])->name('book.barrow-history');
+    Route::get('/barrow-history', [BookController::class, 'history'])->name('barrow-history');
     
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
@@ -76,3 +76,11 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/reader/dashboard', function () {
+    return view('readers/dashboard');
+})->name('dashboard');
+
+Route::get('/dashboard', function () {
+    return view('layouts/master');
+})->name('dashboard');
