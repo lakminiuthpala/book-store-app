@@ -55,6 +55,14 @@
     backup :database
     ```
 
+## packages to use develop the system
+
+1) used laravel breeze to develop Authentication and authorizations
+
+2) used saptie for user role permissions
+
+3) used spatie\db-dumper for create a backup command
+   
 
 
 
