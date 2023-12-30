@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('book_id');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('issued_by');
+            // $table->unsignedBigInteger('issued_by');
             $table->timestamp('borrowed_at');
             $table->timestamp('returned_at')->nullable();
             $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('readers')->onDelete('cascade');
-            $table->foreign('issued_by')->references('id')->on('employees')->onDelete('cascade');
+            // $table->foreign('issued_by')->references('id')->on('employees')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });

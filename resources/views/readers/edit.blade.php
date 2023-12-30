@@ -7,7 +7,7 @@
                 <h2>Edit Reader
 
                     <div class="float-end">
-                        <a class="btn btn-primary" href="{{ route('employees.index') }}"> Back</a>
+                        <a class="btn btn-primary" href="{{ route('readers.index') }}"> Back</a>
                     </div>
                 </h2>
             </div>

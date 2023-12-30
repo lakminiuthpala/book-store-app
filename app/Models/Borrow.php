@@ -13,7 +13,7 @@ class Borrow extends Model
     use HasFactory , SoftDeletes;
     
     protected $table = 'borrows';
-    protected $fillable = ['book_id', 'user_id','is_returned'];
+    protected $fillable = ['book_id', 'user_id','is_returned','returned_at'];
 
     public function book()
     {

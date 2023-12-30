@@ -48,10 +48,8 @@
             <div class="col-xs-12 mb-3">
                 <div class="form-group">
                     <strong>Return Date:</strong>
-                    <div class='input-group date' id='datetimepicker'>
-            <input type='date' class="form-control"  name="returned_at"/>
+            <input type='date' class="form-control"  name="returned_at" />
             
-            </div>
                 </div>
             </div>
             <div class="col-xs-12 mb-3 text-center">

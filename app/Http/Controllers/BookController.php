@@ -8,6 +8,7 @@ use App\Models\Reader;
 use App\Models\Borrow;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\BorrowMail;
+use Illuminate\Support\Facades\Session;
 
 class BookController extends Controller
 {
@@ -112,7 +113,6 @@ class BookController extends Controller
             'book_id' => 'required ',
             'user_id' => 'required',
             'issued_at' => now(),
-            // 'issued_by' =>session->get(),
             
         ]);
 
@@ -134,7 +134,10 @@ class BookController extends Controller
     }
 
     public function history(){
-        dd(Session()->all());
+        
+        $borrows = Borrow::with('book')->get()->where('user_id',auth()->user()->code); 
+        
+        return view('readers.borrowed-history', compact('borrows'));
     }
 
     

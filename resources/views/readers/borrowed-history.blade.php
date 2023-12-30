@@ -25,17 +25,13 @@
             <th>Return Date</th>
             <th>Is Returned</th>
         </tr>
-     @foreach ($readers as $reader)
+     @foreach ($borrows as $borrow)
      <tr>
-         <td>{{ $reader->name }}</td>
-         <td>{{ $reader->issued_at }}</td>
-         <!-- <td>{{ $reader->status }}</td> -->
-         <td>
+         <td>{{ $borrow->book->name }}</td>
+         <td>{{ $borrow->borrowed_at }}<td>
+         <td>{{ $borrow->return_at }}<td>
                 
-                    <a class="btn btn-primary" href="{{ route('reader.edit',$reader->id) }}">Edit</a>
-                    <!-- @can('book-edit') -->
-                    <a class="btn btn-primary" href="{{ route('reader.edit',$reader->id) }}">Edit</a>
-                    <!-- @endcan -->
+                   
 
                 
          </td>

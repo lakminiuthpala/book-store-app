@@ -79,7 +79,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/reader/dashboard', function () {
     return view('readers/dashboard');
-})->name('dashboard');
+})->name('reader.dashboard');
 
 Route::get('/dashboard', function () {
     return view('layouts/master');

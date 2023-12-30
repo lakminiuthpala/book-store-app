@@ -53,7 +53,7 @@ class RegisteredReaderController extends Controller
 
         Auth::login($user);
         
-        return redirect()->route('/borrowed-history')
-            ->with('success', 'Log in successfully');
+        return redirect()->route('reader.dashboard')
+            ->with('success', "You're logged in!");
     }
 }

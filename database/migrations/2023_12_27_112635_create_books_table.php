@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('author')->nullable();
             $table->integer('total_book_count')->nullable();
-            $table->integer('issued_count')->nullable();
+            $table->integer('issued_count')->nullable()->default(0);
             $table->string('status')->default('available'); 
             $table->softDeletes();
             $table->timestamps();
