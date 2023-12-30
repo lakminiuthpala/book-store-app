@@ -33,8 +33,10 @@
                             <li><a class="nav-link" href="{{ route('register') }}">{{ ('Register') }}</a></li>
                         @else
                             <li><a class="nav-link" href="{{ route('books.index') }}">Manage Books</a></li>
+                            @if(Auth::user()->role ==='admin')
                             <li><a class="nav-link" href="{{ route('employees.index') }}">Manage Employee</a></li>
                             <li><a class="nav-link" href="{{ route('readers.index') }}">Manage Reader</a></li>
+                            @endif
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -42,7 +44,7 @@
                                     </a>
                             <li class="ms-3 nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->first_name }} <span class="caret"></span>
                                 </a>
                                 
 

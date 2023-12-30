@@ -44,7 +44,7 @@ class RegisteredReaderController extends Controller
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
-            'user_type' => 'reader',
+            'role' => 'reader',
             'password' => Hash::make($request->password),
             'code' => $reader->id,
         ]);

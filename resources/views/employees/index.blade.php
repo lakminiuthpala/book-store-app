@@ -35,7 +35,9 @@
          <td>{{ $employee->email }}</td>
          <td>{{ $employee->user_type }}</td>
          <td>{{ $employee->status }}</td>
-         <td>
+         <td>@if(Auth::user()->role ==='admin')
+            <a class="btn btn-primary" href="{{ route('employee.edit',$employee->id) }}">Edit</a>
+             @endif
                     <!-- @can('book-edit') -->
                     <a class="btn btn-primary" href="{{ route('employee.edit',$employee->id) }}">Edit</a>
                     <!-- @endcan -->

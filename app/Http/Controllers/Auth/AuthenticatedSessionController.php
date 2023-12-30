@@ -29,8 +29,9 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        $url = '';
-        if($request->user()->role === 'reader'){
+        $url = ''; dd(auth()->user()->role);
+        if(auth()->user()->role === 'reader'){
+        // if($request->user()->role === 'reader'){
             $url = "/reader/dashboard";
         }else{
             $url = "/dashboard";

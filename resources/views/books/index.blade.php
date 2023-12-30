@@ -6,10 +6,15 @@
             <div class="pull-left">
                 <h2>Books                  
             <div class="float-end  pull-right">
+            @if(Auth::user()->role ==='admin')
             <a class="btn btn-success" href="{{ route('book.create') }}"> Create New Book</a>
-              @can('create books')
+            @endif
+            @if(Auth::user()->role ==='reader')
+            <a class="btn btn-success" href="{{ route('reader.dashboard') }}"> Back</a>
+            @endif
+              <!-- @can('create books')
               <a class="btn btn-success" href="{{ route('book.create') }}"> Create New Book</a>
-              @endcan
+              @endcan -->
             </div>
                 </h2>
             </div>
@@ -46,20 +51,24 @@
         <td>{{ $book->issued_count }}</td>
          <td>
                 <form action="{{ route('book.destroy',$book->id) }}" method="POST">
+                    @if(Auth::user()->role ==='admin' || Auth::user()->role ==='editor' || Auth::user()->role ==='viewer' || Auth::user()->role ==='reader')
                     <a class="btn btn-info" href="{{ route('book.show',$book->id) }}">Show</a>
-                    
+                    @endif
+                    @if(Auth::user()->role ==='admin' || Auth::user()->role ==='editor')
                     <a class="btn btn-primary" href="{{ route('book.issue',$book->id) }}">Issue</a>
-                    
-                    @can('edit-books')
+                    @endif
+                    <!-- @can('edit-books')
                     <a class="btn btn-primary" href="{{ route('book.edit',$book->id) }}">Edit</a>
-                    @endcan
+                    @endcan -->
 
 
                     @csrf
                     @method('DELETE')
+                    @if(Auth::user()->role ==='admin')
                     <button type="submit" class="btn btn-danger">Delete</button>
+                    @endif
                     <!-- @can('book-delete') -->
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <!-- <button type="submit" class="btn btn-danger">Delete</button> -->
                     <!-- @endcan -->
                 </form>
          </td>

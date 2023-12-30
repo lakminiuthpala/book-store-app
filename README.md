@@ -43,6 +43,7 @@
 10) run seeders
 ```bash
     php artisan db:seed
+    php artisan db:seed --class=userRole
 ```
 
 11) Start to server
